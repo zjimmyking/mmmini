@@ -1,0 +1,46 @@
+{
+  "ControlType": "Grid",
+  "Title": "商品明细表",
+  "Button": [{
+   "ButtonId": "Add",
+   "ButtonCls": "Add",
+   "ButtonName": "添加",
+   "ButtonIcon": "/icon/add.icon"
+  }, {
+   "ButtonId": "Delete",
+   "ButtonCls": "Delete",
+   "ButtonName": "删除",
+   "ButtonIcon": "/icon/del.icon"
+  }],
+  "Column": [{
+    "id": "Sequ",
+    "displayname": "序号",
+    "displayCls": "textbox",
+    "readOnly": "true"
+   },
+   {
+    "id": "SkuCode",
+    "displayname": "商品编号",
+    "displayCls": "textbox",
+    "readOnly": "true"
+   },
+   {
+    "id": "SkuName",
+    "displayname": "商品名称",
+    "displayCls": "textbox",
+    "readOnly": "true"
+   },
+   {
+    "id": "SkuArea",
+    "displayname": "库区",
+    "displayCls": "textbox",
+    "readOnly": "true"
+   },
+   {
+    "id": "Sum",
+    "displayname": "数量",
+    "displayCls": "textbox",
+    "readOnly": "true"
+   }
+  ]
+ }

@@ -1,0 +1,50 @@
+{
+  "Title": "入库申请单",
+  "Button": [{
+    "ButtonId": "Submit",
+    "ButtonCls": "Submit",
+    "ButtonName": "提交申请",
+    "ButtonIcon": "/icon/sub.icon"
+   },
+   {
+    "ButtonId": "Delete",
+    "ButtonCls": "Delete",
+    "ButtonName": "撤回",
+    "ButtonIcon": "/icon/del.icon"
+   }
+  ],
+  "Tab": [{
+   "TabName": "基本信息",
+   "Items": [{
+    "Id": "OrderCode",
+    "Name": "单据编号",
+    "displayCls": "textbox",
+    "readOnly": "true"
+   }, {
+    "Id": "Userid",
+    "Name": "提交人",
+    "displayCls": "combobox",
+    "readOnly": "false"
+   }, {
+    "Id": "Createtime",
+    "Name": "提交时间",
+    "displayCls": "datepicker",
+    "readOnly": "true"
+   }]
+ 
+  }, {
+   "TabName": "附属信息",
+   "Items": [{
+    "Id": "shopCode",
+    "Name": "供应商编号",
+    "displayCls": "textbox",
+    "readOnly": "true"
+   }, {
+    "Id": "Userid",
+    "Name": "采购类别",
+    "displayCls": "combobox",
+    "readOnly": "false"
+   }]
+ 
+  }]
+ }
