@@ -10,24 +10,72 @@
 <body>
     <!-- <input class="mini-textbox" value="0" /> <br /><br /> -->
 
-<div id="formSubmit"></div>
+<!-- <div id="formSubmit"></div> -->
+<div id="tabs" class="mini-tabs" activeIndex="0"  style="width:500px;height:500px;">
+    <div title="基本信息">
+        
+    </div>
+    <div title="附属信息">
+
+    </div>
+
+</div>
 </div>
 <div id="btns"></div>
 </body>
 </html>
 <script>
     // document.getElementById("time").innerHTML = new Date().getTime();
+    var initTabs = {
+        tab:null,
+        grid: null,
+        init:function(){
+            mini.parse()
+            this.tab = mini.get('tabs')
+            this.setEvent()
+        }, 
+        setEvent: function(){
+            let me = this
+            console.log(mini.get('tabs'))
+            mini.get('tabs').on('activechanged',function(data){
+                // mini.get('tabs').reloadTab(tab)
+            })
+        }
+    }
     $(function(){
+        
+    
       let formsubmit = new FormSubmit('#formSubmit',{
 
       })
+      let that = this
       $.ajax({
             url: "../data/form2.txt",
             success: function (text) {
                 var data = mini.decode(text);
                 console.log(data)
                 formsubmit.loadData(data);
+                // let tab = mini.get('tabs')
+                mini.get('tabs').on('activechanged',function(tab){
+                // mini.get('tabs').reloadTab(tab)
+                console.log(tab)
+                if(tab.tab.title=='基本信息'){
+                    let s = setContent(data.Tab[0].Items)
+                    $('.mini-tabs-body').html(s)
+                }else{
+                    let s = setContent(data.Tab[1].Items)
+                    $('.mini-tabs-body').html(s)
+                }
+                
+                })
             }
         })
+        function setContent (list){
+            let s=''
+            list.forEach(v=>{
+                s+=`${v.Name}<br/><span class="mini-textbox" style="border-width: 0px;"><span class="mini-textbox-border mini-corner-all"><input type="text" class="mini-textbox-input" autocomplete="off" placeholder=""></span><input type="hidden"></span><br><br>`
+            })
+            return s
+            }
     })
 </script>

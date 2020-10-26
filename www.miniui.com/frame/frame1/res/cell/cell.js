@@ -66,18 +66,28 @@ Cell.prototype = {
         return s;
     },
     _renderButton: function(list){
-      let s = ''
+      let s = `<div class="mini-toolbar" style="border-bottom:0;padding:0px;">
+      <table style="width:100%;">
+          <tr>
+              <td style="width:100%;">`
+
+      
       list.forEach(v=>{
-        s+= `<a class="mini-button" onclick="onClick" enabled="false" >${v.ButtonName}</a>`
+        s+= `<a class="mini-button" onclick="onClick" enabled="false" plain="true">${v.ButtonName}</a>`
       })
+      s+=`        </td>
+
+      </tr>
+  </table>           
+</div>`
       $('#btns').html(s)
     },
     _renderColum: function(list){
-      //初始化列
-      let initColumns =[{ type: "indexcolumn",header: "序", width: 40, headerAlign: "center"}]
+      //初始化列 { type: "indexcolumn",header: "序", width: 40, headerAlign: "center"}
+      let initColumns =[]
       list.forEach(v=>{
         initColumns.push({
-          header: v.displayname, field: v.id, width: 60, headerAlign: "center"
+          header: v.displayname, field: v.id, width: '20%', headerAlign: "center"
         })
       })
       // var initColumns = [column0,column1, column2];

@@ -63,9 +63,10 @@ FormSubmit.prototype = {
     _renderButton: function(list){
       let s = ''
       list.forEach(v=>{
-        s+= `<a class="mini-button" onclick="onClick" enabled="false" >${v.ButtonName}</a>`
+        s+= `<a class="mini-button" onclick="onClick" plain enabled="true" >${v.ButtonName}</a>`
       })
       $('#btns').html(s)
+      
     },
     _renderTab: function(list){
       let that  = this
